@@ -22,7 +22,21 @@ class Todo:
     def start(self):
         
         select =int(input(" Enter frome (1-4): "))
+
+        if select==1:
+            print("Create Mode.")
+
+        elif select==2:
+            print("Read Mode.")
         
+        elif select==3:
+            print("Updated....")
+
+        elif select==4:
+            print("Deleted!")
+        else:
+            print("Invalid!.Select Again")
+
 user1 = Todo()
 
 user1.start_with()
