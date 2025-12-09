@@ -42,6 +42,8 @@ class Todo:
 
         else:
             print("ID does not exist")
+            print("Enter again")
+            self.start()
 
     def update_mode(self):
         print("[x]::::::::::UPDATE MODE::::::::::[x]")
@@ -55,9 +57,9 @@ class Todo:
 
         else:
             print("ID does not exist")
+            print("Enter again")
             self.create_mode()
-
-
+            
     def delete_mode(self):
         print("[x]::::::::::DELETE MODE::::::::::[x]")
 
@@ -65,11 +67,12 @@ class Todo:
         if self.id in self.storage:
            del self.storage[self.id]
            print("Deleted successfully!")
-           self.start()
 
         else:
             print("ID does not exist.")
+            self.start()
    
+    # Select operations...   
     def start(self):
         print("Start with.\n 1.Create\n 2.Read \n 3.Update \n 4.Delete")
         select =int(input(" Enter frome (1-4): "))
@@ -88,7 +91,6 @@ class Todo:
 
         else:
             print("Invalid!.Select Again")
-
             self.start() 
 
 user1 = Todo()
