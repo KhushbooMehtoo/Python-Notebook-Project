@@ -1,6 +1,5 @@
 # my to do....
 
-
 class Todo:
      
      #Dictionary
@@ -54,8 +53,12 @@ class Todo:
                 print(" No notes available.")
             else:
                 print("\nAll Notes:")
+                print("------------------")
+                print("| ID |   NOTE   |")
+                print("------------------")
                 for id, note in self.storage.items():
-                    print(f"{id} : {note}")
+                    print(f"| {id} | {note} |")
+                    print("------------------")
 
         else:
             print("Invalid choice!")
