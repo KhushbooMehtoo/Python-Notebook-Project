@@ -1,5 +1,8 @@
 # my to do....
 
+#import messages frome my_module
+import my_modul
+mes=my_modul.Messages()   #obje of my_module
 class Todo:
      
      #Dictionary
@@ -17,7 +20,7 @@ class Todo:
         
     #CRUD Operations.....      
     def create_mode(self):
-        print("[x]::::::::::CREATE MODE::::::::::[x]")
+        print(mes.welcome_mesg['CREATE'])
         
         self.id = input("Create the id: ")
         if self.check_id():
@@ -32,7 +35,7 @@ class Todo:
            self.start()
         
     def read_mode(self):
-        print("[x]::::::::::READ MODE::::::::::[x]")
+        print(mes.welcome_mesg['READ'])
 
         print("1. Read Single Note")
         print("2. Read All Notes")
@@ -67,7 +70,7 @@ class Todo:
        
 
     def update_mode(self):
-        print("[x]::::::::::UPDATE MODE::::::::::[x]")
+        print(mes.welcome_mesg['UPDATE'])
 
         self.id = input("Enter the id: ")
         if self.check_id():
@@ -82,7 +85,7 @@ class Todo:
             self.create_mode()
             
     def delete_mode(self):
-        print("[x]::::::::::DELETE MODE::::::::::[x]")
+        print(mes.welcome_mesg['DELETE'])
 
         self.id = input("Enter the id: ")
         if self.id in self.storage:
@@ -95,6 +98,7 @@ class Todo:
    
     # Select operations...   
     def start(self):
+        
         print("Start with.\n 1.Create\n 2.Read \n 3.Update \n 4.Delete")
         select =int(input(" Enter frome (1-4): "))
 
