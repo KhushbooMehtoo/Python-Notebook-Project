@@ -6,7 +6,13 @@ class Messages:
             'READ':"[x]::::::::::READ MODE::::::::::[x]",
             'UPDATE':"[x]::::::::::UPDATE MODE::::::::::[x]",
             'DELETE':"[x]::::::::::DELETE MODE::::::::::[x]"
-
         }
+    def display(self):
+        self.display={
+            'UPDATED':"Updated successfully!",
+            'DELETED':"Deleted successfully!",
+            'NOT':"ID does not exist!"
+        }
+    
 
 

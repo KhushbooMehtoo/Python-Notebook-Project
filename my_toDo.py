@@ -2,7 +2,8 @@
 
 #import messages frome my_module
 import my_modul
-mes=my_modul.Messages()   #obje of my_module
+mes=my_modul.Messages() 
+mes.display()  #obje of my_module
 class Todo:
      
      #Dictionary
@@ -76,11 +77,11 @@ class Todo:
         if self.check_id():
            self.note=input("Enter the New note: ")
            self.storage[self.id]=self.note
-           print("Updated successfully!")
+           print(mes.display['UPDATED'])
            self.start()
 
         else:
-            print("ID does not exist")
+            print(mes.display['NOT'])
             print("Enter again")
             self.create_mode()
             
