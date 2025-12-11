@@ -35,15 +35,33 @@ class Todo:
     def read_mode(self):
         print("[x]::::::::::READ MODE::::::::::[x]")
 
-        self.id = input("Enter the id: ")   
-        if self.check_id():
-           print(self.storage[self.id])
-           self.start()
+        print("1. Read Single Note")
+        print("2. Read All Notes")
+
+        choice = input("Choose (1/2): ")
+
+        # ---- Read Single ----
+        if choice == "1":
+            id = input("Enter the id: ")
+            if self.check_id(id):
+                print(f"{id} : {self.storage[id]}")
+            else:
+                print("ID does not exist!")
+
+        # ---- Read All ----
+        elif choice == "2":
+            if not self.storage:
+                print(" No notes available.")
+            else:
+                print("\nAll Notes:")
+                for id, note in self.storage.items():
+                    print(f"{id} : {note}")
 
         else:
-            print("ID does not exist")
-            print("Enter again")
-            self.start()
+            print("Invalid choice!")
+
+        self.start()
+       
 
     def update_mode(self):
         print("[x]::::::::::UPDATE MODE::::::::::[x]")
