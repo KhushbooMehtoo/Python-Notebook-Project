@@ -1,9 +1,9 @@
 # my to do....
-
 #import messages frome my_module
 import my_modul
 mes=my_modul.Messages() 
 mes.display()  #obje of my_module
+mes.start_with()
 class Todo:
      
      #Dictionary
@@ -25,14 +25,13 @@ class Todo:
         
         self.id = input("Create the id: ")
         if self.check_id():
-           print("ID is already exist")
+           print(mes.display['ALREADY_EXIST'])
            self.create_mode()
         else:
-        #    self.id = input("Create the id: ")
            self.note = input("Enter notes: ")
 
            self.storage[self.id]=self.note
-           print("Note saved successfully!")
+           print(mes.display['SAVED'])
            self.start()
         
     def read_mode(self):
@@ -49,7 +48,7 @@ class Todo:
             if self.check_id(id):
                 print(f"{id} : {self.storage[id]}")
             else:
-                print("ID does not exist!")
+                print(mes.display['NOT'])
 
         # ---- Read All ----
         elif choice == "2":
@@ -91,18 +90,15 @@ class Todo:
         self.id = input("Enter the id: ")
         if self.id in self.storage:
            del self.storage[self.id]
-           print("Deleted successfully!")
+           print(mes.display['DELETED'])
 
         else:
-            print("ID does not exist.")
+            print(mes.display['NOT'])
             self.start()
    
     # Select operations...   
-    def start(self):
-        
-        print("Start with.\n 1.Create\n 2.Read \n 3.Update \n 4.Delete")
+    def started(self):
         select =int(input(" Enter frome (1-4): "))
-
         if select==1:
             self.create_mode()
 
@@ -120,4 +116,4 @@ class Todo:
             self.start() 
 
 user1 = Todo()
-print(user1.start())
+print(user1.started())
