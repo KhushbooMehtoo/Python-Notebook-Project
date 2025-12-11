@@ -97,7 +97,7 @@ class Todo:
             self.start()
    
     # Select operations...   
-    def started(self):
+    def start(self):
         select =int(input(" Enter frome (1-4): "))
         if select==1:
             self.create_mode()
@@ -116,4 +116,4 @@ class Todo:
             self.start() 
 
 user1 = Todo()
-print(user1.started())
+print(user1.start())
