@@ -1,4 +1,6 @@
 #my Module for My-noteBook
+from yachalk import chalk
+
 class Messages:
     def  __init__(self):
         #Welcomming Messages...
@@ -21,7 +23,7 @@ class Messages:
 
         #Start Notes with......
     def start_with(self):
-        print("Start with.\n 1.Create\n 2.Read \n 3.Update \n 4.Delete")
+        print(chalk.magenta("Start with.\n 1.Create\n 2.Read \n 3.Update \n 4.Delete"))
 
     
 

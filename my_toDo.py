@@ -1,8 +1,8 @@
-# my to do....
-#import messages frome my_module
+from yachalk import chalk
+
 import my_modul
 mes=my_modul.Messages() 
-mes.display()  #obje of my_module
+mes.display()  
 mes.start_with()
 class Todo:
      
