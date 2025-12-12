@@ -1,6 +1,9 @@
-# my to do....
+from yachalk import chalk
 
-
+import my_modul
+mes=my_modul.Messages() 
+mes.display()  
+mes.start_with()
 class Todo:
      
      #Dictionary
@@ -18,22 +21,21 @@ class Todo:
         
     #CRUD Operations.....      
     def create_mode(self):
-        print("[x]::::::::::CREATE MODE::::::::::[x]")
+        print(mes.welcome_mesg['CREATE'])
         
         self.id = input("Create the id: ")
         if self.check_id():
-           print("ID is already exist")
+           print(mes.display['ALREADY_EXIST'])
            self.create_mode()
         else:
-        #    self.id = input("Create the id: ")
            self.note = input("Enter notes: ")
 
            self.storage[self.id]=self.note
-           print("Note saved successfully!")
+           print(mes.display['SAVED'])
            self.start()
         
     def read_mode(self):
-        print("[x]::::::::::READ MODE::::::::::[x]")
+        print(mes.welcome_mesg['READ'])
 
         print("1. Read Single Note")
         print("2. Read All Notes")
@@ -46,7 +48,7 @@ class Todo:
             if self.check_id(id):
                 print(f"{id} : {self.storage[id]}")
             else:
-                print("ID does not exist!")
+                print(mes.display['NOT'])
 
         # ---- Read All ----
         elif choice == "2":
@@ -54,8 +56,12 @@ class Todo:
                 print(" No notes available.")
             else:
                 print("\nAll Notes:")
+                print("------------------")
+                print("| ID |   NOTE   |")
+                print("------------------")
                 for id, note in self.storage.items():
-                    print(f"{id} : {note}")
+                    print(f"| {id} | {note} |")
+                    print("------------------")
 
         else:
             print("Invalid choice!")
@@ -64,37 +70,35 @@ class Todo:
        
 
     def update_mode(self):
-        print("[x]::::::::::UPDATE MODE::::::::::[x]")
+        print(mes.welcome_mesg['UPDATE'])
 
         self.id = input("Enter the id: ")
         if self.check_id():
            self.note=input("Enter the New note: ")
            self.storage[self.id]=self.note
-           print("Updated successfully!")
+           print(mes.display['UPDATED'])
            self.start()
 
         else:
-            print("ID does not exist")
+            print(mes.display['NOT'])
             print("Enter again")
             self.create_mode()
             
     def delete_mode(self):
-        print("[x]::::::::::DELETE MODE::::::::::[x]")
+        print(mes.welcome_mesg['DELETE'])
 
         self.id = input("Enter the id: ")
         if self.id in self.storage:
            del self.storage[self.id]
-           print("Deleted successfully!")
+           print(mes.display['DELETED'])
 
         else:
-            print("ID does not exist.")
+            print(mes.display['NOT'])
             self.start()
    
     # Select operations...   
     def start(self):
-        print("Start with.\n 1.Create\n 2.Read \n 3.Update \n 4.Delete")
         select =int(input(" Enter frome (1-4): "))
-
         if select==1:
             self.create_mode()
 
