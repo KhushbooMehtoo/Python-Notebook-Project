@@ -53,7 +53,7 @@ class Todo:
         # ---- Read All ----
         elif choice == "2":
             if not self.storage:
-                print(" No notes available.")
+                print(chalk.red(" No notes available."))
             else:
                 print("\nAll Notes:")
                 print("------------------")
@@ -64,7 +64,7 @@ class Todo:
                     print("------------------")
 
         else:
-            print("Invalid choice!")
+            print(chalk.red("Invalid choice!"))
 
         self.start()
        
@@ -112,7 +112,7 @@ class Todo:
              self.delete_mode()
 
         else:
-            print("Invalid!.Select Again")
+            print(chalk.red("Invalid!.Select Again"))
             self.start() 
 
 user1 = Todo()
