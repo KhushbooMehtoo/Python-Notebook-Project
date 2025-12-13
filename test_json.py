@@ -1,16 +1,37 @@
 
 import json
-#JSON String
-emp='{"id":"01","emp_name":"Khushboo","department":"Development"}'
-print("This is JSON String",type(emp))
 
-#convert into python 
-print("Convert From Json to Python")
+my_json ='{"name":"Khushboo","age":"20","Department":"Development"}'
 
-#convert string itno dictionary
-my_emp= json.loads(emp)
-print("convert into python",type(my_emp))
-print(my_emp)
+my_py=json.loads(my_json)
+
+print("convert JSON String into Python Dictionary")
+print(my_py)
+
+
+
+#converting python dictionary into json
+
+my_p={
+    "name":"khushboo",
+    "age":"20"
+}
+print("convert Python  Dictionary INTO json String ")
+my_j=json.dumps(my_p)
+print(my_j)
+
+
+# #JSON String
+# emp='{"id":"01","emp_name":"Khushboo","department":"Development"}'
+# print("This is JSON String",type(emp))
+
+# #convert into python 
+# print("Convert From Json to Python")
+
+# #convert string itno dictionary
+# my_emp= json.loads(emp)
+# print("convert into python",type(my_emp))
+# print(my_emp)
 
 
 
